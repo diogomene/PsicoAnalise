@@ -6,9 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>PsicoAnalise</title>
 </head>
 <body>
-    <h1>Olá Luana <span id="chrome-version"></span></h1>
+    <div class="cont-receber">
+        <div class="tot-receber">
+            <h3 class="header-tot">Total a receber</h3>
+            <h2 id="quantidade-total">R$1.200,98</h2>
+        </div>
+        <div class="atrasado-receber">
+            <h3 class="header-old-tot">Atrasados</h3>
+            <h2 id="quantidade-atrasada">R$200,12</h2>
+        </div>
+    </div>
+    <div class="down-side">
+        <div class="lista-pacientes panel">
+            <div class="paciente">
+                <div class="estado-pagamento"></div>
+                <div class="info">
+                    <p class="nome-paciente">Leandro</p>
+                    <p class="dias-atendimento">seg, sex, sáb</p>
+                </div>
+                <div class="money">
+                    <p class="quantidade-devendo">R$1000</p>
+                </div>
+            </div>
+            <div class="paciente">
+                <div class="estado-pagamento"></div>
+                <div class="info">
+                    <p class="nome-paciente">Leandro</p>
+                    <p class="dias-atendimento">seg, sex, sáb</p>
+                </div>
+                <div class="money">
+                    <p class="quantidade-devendo">R$1000</p>
+                </div>
+            </div>
+        </div>
+    
+        <div class="cont-cadastro">
+            <form>
+                <label for="nome">Nome do paciente</label>
+                <input type="text" name="nome" id="nome" placeholder="Nome" required>
+
+                    <div>
+                        <label for="consultas">Seções</label>
+                        <input class="half-input" type="number" name="consultas" id="consultas" min="1" max="30" placeholder="Seções" required>    
+                    </div>
+                    <div>
+                        <label for="valor">Valor</label>
+                        <input class="half-input" type="number" name="valor" id="valor" min="1" step="any" placeholder="Valor" required>
+                    </div>
+
+                <input class="bottom-button" type="submit" value="Cadastrar">
+            </form>
+        </div>
+    </div>
 </body>
 </html>

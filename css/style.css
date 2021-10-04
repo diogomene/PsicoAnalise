@@ -1,0 +1,210 @@
+@font-face {
+    font-family: 'Noto Sans Display';
+    src: url('../assets/fonts/NotoSansDisplay-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-stretch: normal;
+    font-display: swap;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Noto Sans Display';
+    src: url('../assets/fonts/NotoSansDisplay-Light.ttf') format('truetype');
+    font-weight: lighter;
+    font-stretch: normal;
+    font-display: swap;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Noto Sans Display';
+    src: url('../assets/fonts/NotoSansDisplay-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-stretch: normal;
+    font-display: swap;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Noto Sans Display';
+    src: url('../assets/fonts/NotoSansDisplay-Medium.ttf') format('truetype');
+    font-weight: 900;
+    font-stretch: normal;
+    font-display: swap;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Noto Sans Display';
+    src: url('../assets/fonts/NotoSansDisplay-ExtraLight.ttf') format('truetype');
+    font-weight: 100;
+    font-stretch: normal;
+    font-display: swap;
+    font-style: normal;
+}
+
+:root{
+    --background-primary: #F4F4F4;
+    --background-secundary: #d1d1d133;
+    --background-money-primary: #5C52C9;
+    --background-money-secundary: #D26B6B;
+    --background-form: #b6bff0;
+    --white-font-primary: #ffff;
+    --white-font-secundary: #E7E7E7;
+    --black-font-primary: #343434;
+    --payed-color: #6ADABF;
+    --notpayed-color-primary: #D26B6B;
+    --notpayed-color-secundary: #D26B6B79;
+    --form-background: #001A9F33;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans Display', sans-serif;
+}
+body{
+    padding: 40px 68px 22px;
+    background-color: var(--background-primary);
+}
+
+/* Parte que mostra os valores totais a serem recebidos */
+.cont-receber{
+    display: flex;
+    flex-direction: row;
+    color: var(--white-font-secundary);
+    height: 113px;
+    letter-spacing: 0.02em;
+}
+.cont-receber .tot-receber{
+    width: 280px;
+    min-width: max-content;
+    padding: 17px 23px 28px;
+    background-color: var(--background-money-primary);
+    border-radius: 25px;
+    line-height: 37px;
+    z-index: 3;
+}
+.cont-receber .tot-receber h3.header-tot{
+    font-size: 24px;
+    font-weight: lighter;
+}
+.cont-receber .tot-receber h2{
+    font-size: 48px;
+    font-weight: bold;
+}
+.cont-receber .atrasado-receber{
+    width: 200px;
+    min-width: max-content;
+    border: none;
+    padding: 26px 29px 28px;
+    background-color: var(--background-money-secundary);
+    border-radius: 25px;
+    line-height: 32px;
+    box-shadow: 0 0 24px 60px var(--background-money-secundary) inset,
+     -40px 0px 0px var(--background-money-secundary),
+     0 0 24px 30px var(--background-money-secundary) inset,
+     0 0 0 0px var(--background-money-secundary) inset
+}
+.cont-receber .atrasado-receber h3.header-old-tot{
+    font-size: 18px;
+    font-weight: lighter;
+}
+.cont-receber .atrasado-receber h2{
+    font-size: 36px;
+    font-weight: bold;
+}
+/* Margem entre cima e embaixo */
+.down-side{
+    display: flex;
+    flex-direction: row;
+    margin-top: 75px;
+}
+/* Lista de pacientes */
+.lista-pacientes{
+    display: flex;
+    flex-direction: column;
+    width: 390px;
+    height: 250px;
+    padding: 18px 25px;
+    background-color: var(--background-secundary);
+    border-radius: 15px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.paciente{
+    color: var(--black-font-primary);
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.estado-pagamento{
+    width: 45px;
+    height: 45px;
+    border-radius: 9px;
+    margin-right: 13px;
+    background-color: var(--payed-color);
+}
+/* Usei o font-weight de 900, pois não pude configurar com facilidade, de outra 
+maneira, a espessura média da fonte */
+.paciente .nome-paciente{
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.paciente .money{
+    margin-left: auto;
+    font-weight: 900;
+    font-size: 24px;
+
+}
+.cont-cadastro{
+    color: var(--black-font-primary);
+    margin-left: 21px;
+    width: 252px;
+    height: 250px;
+    padding: 18px 25px;
+    background-color: var(--background-form);
+    border-radius: 15px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+input{
+    display: block;
+    margin-bottom: 6px;
+    border-radius: 10px;
+    padding: 2px 5px;
+    border: none;
+    width: 100%;
+}
+input[type="submit"]{
+    font-weight: 900;
+    transition: all 0.2s;
+    color: var(--black-font-primary);
+}
+input[type="submit"]:hover{
+    background-color: var(--background-money-secundary);
+    color: white;
+}
+.cont-cadastro label{
+    text-align: center;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 900;
+    margin-left: 2px;
+    color: var(--black-font-primary);
+}
+.cont-half-form{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.half-input{
+    max-width: 100%;
+}
+
+    
+.bottom-button{
+    margin-top: 30px;
+}
