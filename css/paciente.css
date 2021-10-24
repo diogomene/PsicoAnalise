@@ -70,7 +70,7 @@
     -40px 0px 0px var(--notpayed-color-pardon),
     0 0 24px 30px var(--notpayed-color-pardon) inset,
     0 0 0 0px var(--notpayed-color-pardon) inset;
-    fill: var(--white-font-primary);
+    fill: var(--notpayed-color-pardon);
     transition: all .3s;
     cursor: pointer;
 }
@@ -80,4 +80,5 @@
     -40px 0px 0px var(--pardon-color),
     0 0 24px 30px var(--pardon-color) inset,
     0 0 0 0px var(--pardon-color) inset;
+    fill: var(--white-font-primary);
 }
