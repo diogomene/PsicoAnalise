@@ -1,0 +1,83 @@
+:root{
+    --background-primary: #F4F4F4;
+    --background-secundary: #d1d1d133;
+    --background-money-primary: #5C52C9;
+    --background-money-secundary: #D26B6B;
+    --background-form: #b6bff0;
+    --white-font-primary: #ffff;
+    --white-font-secundary: #E7E7E7;
+    --black-font-primary: #343434;
+    --payed-color: #6ADABF;
+    --notpayed-color-primary: #D26B6B;
+    --notpayed-color-secundary: #D26B6B79;
+    --notpayed-color-pardon: #e28b8b;
+    --form-background: #001A9F33;
+    --pardon-color: #6BD188;
+}
+#goback{
+    float: left;
+    transition: fill .2s;
+    cursor: pointer;
+}
+#goback:hover{
+    fill: var(--background-money-primary);
+}
+.name-cont{
+    margin-top: 30px;
+    width: 100%;
+    text-align: center;
+}
+.paciente-nome{
+    font-weight: 900;
+}
+.down-side{
+    margin-top: 100px;
+}
+.valor-cont{
+    display: flex;
+    flex-direction: row;
+    padding: 0 22px;
+    align-items: center;
+    justify-content: space-between;
+}
+.paciente .valor-cont{
+    height: 45px;
+    width: 310PX;
+    background-color: var(--notpayed-color-primary);
+    border-radius: 16px;
+    z-index: 3;
+}
+.paciente .valor-cont .devendo{
+    font-weight: bold;
+    font-size: 22px;
+    color: var(--white-font-secundary);
+}
+.paciente .valor-cont .data-conta{
+    font-weight: lighter;
+    color: var(--white-font-secundary);
+    font-size: 24px;
+}
+.pardon-cont{
+    height: 45px;
+    width: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--notpayed-color-pardon);
+    border-radius: 16px;
+    box-shadow: 0 0 24px 60px var(--notpayed-color-pardon) inset,
+    -40px 0px 0px var(--notpayed-color-pardon),
+    0 0 24px 30px var(--notpayed-color-pardon) inset,
+    0 0 0 0px var(--notpayed-color-pardon) inset;
+    fill: var(--white-font-primary);
+    transition: all .3s;
+    cursor: pointer;
+}
+.pardon-cont:hover{
+    background-color: 0 0 24px 60px var(--pardon-color);
+    box-shadow: 0 0 24px 60px var(--pardon-color) inset,
+    -40px 0px 0px var(--pardon-color),
+    0 0 24px 30px var(--pardon-color) inset,
+    0 0 0 0px var(--pardon-color) inset;
+}

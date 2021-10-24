@@ -117,6 +117,10 @@ body{
     margin-top: 75px;
 }
 /* Lista de pacientes */
+a {
+    color: inherit; /* blue colors for links too */
+    text-decoration: inherit; /* no underline */
+  }
 .lista-pacientes{
     display: flex;
     flex-direction: column;
@@ -151,7 +155,10 @@ maneira, a espessura média da fonte */
     font-size: 20px;
     font-weight: 900;
 }
-
+.paciente .nome-paciente:hover{
+    color: var(--background-money-primary);
+    transition: color .2s;
+}
 .paciente .money{
     margin-left: auto;
     font-weight: 900;
