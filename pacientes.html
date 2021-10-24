@@ -19,22 +19,13 @@
     </div>
     <div class="down-side">
         <div class="lista-pacientes panel" id="lista-contas">
-            <div class="paciente">
-                <div class="valor-cont">
-                    <p class="devendo">R$100</p>
-                    <p class="data-conta">12/2020</p>
-                </div>
-                <div class="pardon-cont">
-                    <svg id="pardon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
-                </div>
-            </div>
         </div>
     
         <div class="cont-cadastro">
-            <form>
+            <form id="cadastro-divida">
                     <div>
                         <label for="valor">Valor</label>
-                        <input class="half-input" type="number" name="valor" id="valor" min="1" step="any" placeholder="Valor" required>
+                        <input class="half-input" type="number" inputmode="numeric" name="valor" id="valor" min="1" step="any" placeholder="Valor" required>
                     </div>
                     <div>
                         <label for="valor">Data</label>
@@ -45,5 +36,5 @@
             </form>
         </div>
     </div>
-    <script src="./scripts/eventsHandler.js" defer></script>
+    <script src="./scripts/eventsHandler.js"></script>
 </body>

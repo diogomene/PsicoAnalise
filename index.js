@@ -1,6 +1,6 @@
 const path = require('path')
-const {app, BrowserWindow, Tray, Menu} = require('electron')
-const fs = require("fs")
+const {app, BrowserWindow, ipcMain} = require('electron')
+const dialogDivida = require('./scripts/dialogDivida')
 let mw;
 const createWindow = ()=>{
     const iconPath = path.join(__dirname, 'assets', "icon.png")
@@ -32,3 +32,5 @@ app.whenReady().then(()=>{
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') app.quit()
   })
+
+ipcMain.on("delete-conta-request", dialogDivida)

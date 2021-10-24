@@ -13,6 +13,7 @@
     --notpayed-color-pardon: #e28b8b;
     --form-background: #001A9F33;
     --pardon-color: #6BD188;
+    --background-alreadypayed:#298543;
 }
 #goback{
     float: left;
@@ -43,9 +44,14 @@
 .paciente .valor-cont{
     height: 45px;
     width: 310PX;
-    background-color: var(--notpayed-color-primary);
     border-radius: 16px;
     z-index: 3;
+}
+.paciente.nao-pago .valor-cont{
+    background-color: var(--notpayed-color-primary);
+}
+.paciente.pago .valor-cont{
+    background-color: var(--background-alreadypayed)
 }
 .paciente .valor-cont .devendo{
     font-weight: bold;
@@ -64,17 +70,27 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background-color: var(--notpayed-color-pardon);
     border-radius: 16px;
+    transition: all .3s;
+    cursor: pointer;
+}
+.paciente.nao-pago .pardon-cont{
+    background-color: var(--notpayed-color-pardon);
     box-shadow: 0 0 24px 60px var(--notpayed-color-pardon) inset,
     -40px 0px 0px var(--notpayed-color-pardon),
     0 0 24px 30px var(--notpayed-color-pardon) inset,
     0 0 0 0px var(--notpayed-color-pardon) inset;
     fill: var(--notpayed-color-pardon);
-    transition: all .3s;
-    cursor: pointer;
 }
-.pardon-cont:hover{
+.paciente.pago .pardon-cont{
+    background-color: var(--pardon-color);
+    box-shadow: 0 0 24px 60px var(--pardon-color) inset,
+    -40px 0px 0px var(--pardon-color),
+    0 0 24px 30px var(--pardon-color) inset,
+    0 0 0 0px var(--pardon-color) inset;
+    fill: var(--pardon-color);
+}
+.paciente.nao-pago .pardon-cont:hover{
     background-color: 0 0 24px 60px var(--pardon-color);
     box-shadow: 0 0 24px 60px var(--pardon-color) inset,
     -40px 0px 0px var(--pardon-color),
@@ -82,3 +98,12 @@
     0 0 0 0px var(--pardon-color) inset;
     fill: var(--white-font-primary);
 }
+.paciente.pago .pardon-cont:hover{
+    background-color: 0 0 24px 60px var(--notpayed-color-pardon);
+    box-shadow: 0 0 24px 60px var(--notpayed-color-pardon) inset,
+    -40px 0px 0px var(--notpayed-color-pardon),
+    0 0 24px 30px var(--notpayed-color-pardon) inset,
+    0 0 0 0px var(--notpayed-color-pardon) inset;
+    fill: var(--white-font-primary);
+}
+

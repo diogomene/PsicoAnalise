@@ -147,7 +147,13 @@ a {
     height: 45px;
     border-radius: 9px;
     margin-right: 13px;
+    
+}
+.estado-pagamento.pago{
     background-color: var(--payed-color);
+}
+.estado-pagamento.nao-pago{
+    background-color: var(--background-money-secundary);
 }
 /* Usei o font-weight de 900, pois não pude configurar com facilidade, de outra 
 maneira, a espessura média da fonte */
@@ -186,6 +192,7 @@ input{
 input[type="submit"]{
     font-weight: 900;
     transition: all 0.2s;
+    cursor: pointer;
     color: var(--black-font-primary);
 }
 input[type="submit"]:hover{
