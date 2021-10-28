@@ -17,20 +17,19 @@ window.addEventListener('DOMContentLoaded', () => {
     if (cadastroDivida)
         cadastroDivida.addEventListener('submit', e => {
             e.preventDefault()
-            window.teste.salvarDivida(loadDividaInfo())
+            window.dividaOperations.salvarDivida(loadDividaInfo())
         })
 
 
-    const pardons = document.querySelectorAll('.pardon-cont')
-    console.log(pardons)
-    if (pardons.length > 0) {
-        pardons.forEach(element => {
-            const idConta = element.getAttribute('conta-id')
-            element.addEventListener('click', e => {
-                console.log("Epa!")
-                window.teste.toggleDivida(idConta)
+    const toggleDividas = document.querySelectorAll('.pardon-cont')
+    console.log(toggleDividas)
+    if (toggleDividas.length > 0) {
+        toggleDividas.forEach(toggleDivida => {
+            const idConta = toggleDivida.getAttribute('conta-id')
+            toggleDivida.addEventListener('click', e => {
+                window.dividaOperations.toggleDivida(idConta)
             })
-            element.addEventListener('contextmenu', e => window.teste.excluirDivida(idConta))
+            toggleDivida.addEventListener('contextmenu', e => window.dividaOperations.excluirDivida(idConta))
         })
     }
 })

@@ -1,5 +1,5 @@
 const {ipcRenderer} = require('electron')
-const {loadData, getId, saveData} = require('./loadAndRenderData')
+const {loadData, getId, saveData} = require('../loadAndRenderData')
 
 const salvarDivida = async (info)=>{
     const data = await loadData();

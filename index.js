@@ -1,6 +1,6 @@
 const path = require('path')
 const {app, BrowserWindow, ipcMain} = require('electron')
-const dialogDivida = require('./scripts/dialogDivida')
+const dialogDivida = require('./scripts/dividas/dialogDivida')
 let mw;
 const createWindow = ()=>{
     const iconPath = path.join(__dirname, 'assets', "icon.png")

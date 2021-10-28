@@ -13,7 +13,7 @@ async function saveData(data){
     data = JSON.stringify(data)
     await fs.writeFileSync(jsonPath, data)
 }
-function loadPacientes(listaPacientes) {
+function renderPacientes(listaPacientes) {
     const labelTotalReceber = document.getElementById("quantidade-total")
     const labelAtrasadoAreceber = document.getElementById("quantidade-atrasada")
     let totalAreceber = 0
@@ -25,7 +25,7 @@ function loadPacientes(listaPacientes) {
                 totalAreceber+=conta.valor;
                 devendo=true;
                 const data = conta.data.split('/')
-                if(data[0]<today.getMonth() && data[1]<=today.getFullYear()){
+                if(data[1]<today.getFullYear() || data[0]<today.getMonth() && data[1]<=today.getFullYear()){
                     atrasadoAreceber+=conta.valor;
                 }
             }
@@ -51,7 +51,7 @@ function getId(){
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get('id');
 }
-function loadDetails() {
+function renderDetalhesPaciente() {
     const listaContas = document.getElementById("lista-contas")
     const idPaciente = getId()
     const checkSVG = `<svg id="pardon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>`
@@ -78,9 +78,9 @@ async function renderData() {
     pacientes = data.pacientes
     const listaPacientes = document.getElementById('lista-pacientes')
     if (listaPacientes) {
-        loadPacientes(listaPacientes)
+        renderPacientes(listaPacientes)
     } else {
-        loadDetails()
+        renderDetalhesPaciente()
     }
 }
 

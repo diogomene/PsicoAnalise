@@ -1,1 +1,1 @@
-{"pacientes":[{"nome":"Leandro","secoes":2,"valor":100.2,"devendo":100,"contas":[{"valor":100,"data":"12/2021","pago":false}]},{"nome":"Leandro","secoes":2,"valor":100.2,"devendo":10,"contas":[{"valor":10,"data":"01/2021","pago":false}]}],"login":{"user":"luana","password":"oias"}}
+{"pacientes":[{"nome":"Leandro","secoes":2,"valor":100.2,"devendo":0,"contas":[]},{"nome":"Leandro","secoes":2,"valor":100.2,"devendo":0,"contas":[]}],"login":{"user":"luana","password":"oias"}}
