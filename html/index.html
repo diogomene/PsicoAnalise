@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/jquery-weekdays.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/jquery-weekdays.css">
     <title>PsicoAnalise</title>
 </head>
 <body id="body">
@@ -26,7 +26,7 @@
         </div>
     
         <div class="cont-cadastro">
-            <form>
+            <form id="cadastro-paciente">
                 <label for="nome">Nome do paciente</label>
                 <input type="text" name="nome" id="nome" placeholder="Nome" required>
                 <div>
@@ -35,19 +35,19 @@
                 </div>
                 <div class="weekDays-selector">
                         <label for="weekday">Seções</label> <br>
-                        <input type="checkbox"  name="weekday" id="weekday-mon2" val="dom" class="weekday" />
+                        <input type="checkbox"  name="weekday" id="weekday-mon2" value="dom" class="weekday" />
                         <label for="weekday-mon2">D</label>
-                        <input type="checkbox"  name="weekday" id="weekday-tue2" val="seg" class="weekday" />
+                        <input type="checkbox"  name="weekday" id="weekday-tue2" value="seg" class="weekday" />
                         <label for="weekday-tue2">S</label>
-                        <input type="checkbox"  name="weekday" id="weekday-wed2" val="ter" class="weekday" />
+                        <input type="checkbox"  name="weekday" id="weekday-wed2" value="ter" class="weekday" />
                         <label for="weekday-wed2">T</label>
-                        <input type="checkbox"  name="weekday" id="weekday-thu2" val="qua" class="weekday" />
+                        <input type="checkbox"  name="weekday" id="weekday-thu2" value="qua" class="weekday" />
                         <label for="weekday-thu2">Q</label>
-                        <input type="checkbox"  name="weekday" id="weekday-fri2" val="qui" class="weekday" />
+                        <input type="checkbox"  name="weekday" id="weekday-fri2" value="qui" class="weekday" />
                         <label for="weekday-fri2">Q</label>
-                        <input type="checkbox"  name="weekday" id="weekday-sat2" val="sex" class="weekday" />
+                        <input type="checkbox"  name="weekday" id="weekday-sat2" value="sex" class="weekday" />
                         <label for="weekday-sat2">S</label>
-                        <input type="checkbox"  name="weekday" id="weekday-sun2" val="sab" class="weekday" />
+                        <input type="checkbox"  name="weekday" id="weekday-sun2" value="sab" class="weekday" />
                         <label for="weekday-sun2">S</label>
                     </div>
 
@@ -56,5 +56,7 @@
             </form>
         </div>
     </div>
+    <script src="../scripts/models/Paciente.js"></script>
+    <script src="../scripts/pacientes/pacientesEventsHandler.js"></script>
 </body>
 </html>

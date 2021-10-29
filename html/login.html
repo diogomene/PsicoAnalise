@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <title>Login</title>
+</head>
+<body id="body">
+    <div class="cont-cadastro">
+        <h4>Login</h4>
+        <form id="login-form">
+            <label for="username">Usuário</label>
+            <input type="text" name="username" id="username" placeholder="Usuário" required minlength="5">
+            <label for="password">Senha</label>
+            <input type="password" name="password" id="password" placeholder="Senha" required minlength="5">
+            <input class="bottom-button" type="submit" value="Entrar">
+        </form>
+    </div>
+    <script src="../scripts/login/loginEventsHandler.js"></script>
+</body>

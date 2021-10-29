@@ -7,17 +7,18 @@ window.addEventListener('DOMContentLoaded', () => {
         data = `${nativeData[1]}/${nativeData[0]}`
         return { valor: Number(valor), data: data, pago: false }
     }
-    const gobackBtn = document.getElementById('goback')
+    const goBackBtn = document.getElementById('goback')
     //Listener de botão para voltar página
-    if (gobackBtn)
-        gobackBtn.addEventListener('click', () => { history.back() })
+    if (goBackBtn)
+        goBackBtn.addEventListener('click', () => { history.back() })
 
-    const cadastroDivida = document.getElementById('cadastro-divida');
+    const formularioCadastroDivida = document.getElementById('cadastro-divida');
     //Listener de submissão de formulário de dívida
-    if (cadastroDivida)
-        cadastroDivida.addEventListener('submit', e => {
+    if (formularioCadastroDivida)
+        formularioCadastroDivida.addEventListener('submit', e => {
             e.preventDefault()
             window.dividaOperations.salvarDivida(loadDividaInfo())
+            window.location.reload()
         })
 
 
@@ -28,8 +29,11 @@ window.addEventListener('DOMContentLoaded', () => {
             const idConta = toggleDivida.getAttribute('conta-id')
             toggleDivida.addEventListener('click', e => {
                 window.dividaOperations.toggleDivida(idConta)
+                window.location.reload()
             })
-            toggleDivida.addEventListener('contextmenu', e => window.dividaOperations.excluirDivida(idConta))
+            toggleDivida.addEventListener('contextmenu', e => { 
+                window.dividaOperations.requisitExcluirDivida(idConta); 
+                })
         })
     }
 })
