@@ -1,19 +1,41 @@
 {
-  "name": "sistemaluana",
+  "name": "PsicoAnalise",
   "version": "1.0.0",
-  "description": "",
+  "description": "Aplicativo de gerenciamento de pagamentos de consultas psicológicas.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "electron ."
+    "dev": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
-  "author": "",
+  "author": "Diogo Menezes",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^15.0.0"
+    "electron": "^15.0.0",
+    "electron-builder": "^22.13.1"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
     "fs": "^0.0.1-security"
+  },
+  "build": {
+    "appId": "com.diogomenezes.psicoanalise",
+    "mac": {
+      "category": "your.app.category.type"
+    },
+    "directories":{
+      "output":"dist"
+    },
+    "productName":"PsicoAnalise",
+    "target":"nsis",
+    "icon":"assets/buildicon.png",
+    "nsis":{
+      "allowToChangeInstallationDirectory":true,
+      "installerIcon":"assets/buildicon.png",
+      "runAfterFinish":true,
+      "createDesktopShortcut":true,
+      "shortcutName":"PsicoAnalise"
+    }
   }
 }
