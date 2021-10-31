@@ -11,7 +11,7 @@ function loadDiasSecao(){
         }       
     });
     if(quantidadeDiasSelecionados==7){
-        return "Todos os dias"
+        return {diasSecao:"Todos os dias",quantidadeDiasSelecionados}
     }
     return {diasSecao:diasSecao.trim(),quantidadeDiasSelecionados}
     

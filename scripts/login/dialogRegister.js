@@ -6,6 +6,7 @@ const dialogRegister = async (event, args)=>{
         type:"warning",
         buttons:["Sim", "Não"],
         defaultId:1,
+        cancelId:1,
         detail:"Após o primeiro registro, suas credentiais só poderão ser modificadas pelo desenvolvedor do sistema."
         
     })
