@@ -34,7 +34,8 @@ const requisitExcluirDivida = async (idConta)=>{
 const deletarDivida=async(idConta)=>{
     const data = await loadData();
     const id = getId()
-    data.pacientes[id].devendo-=data.pacientes[id].contas[idConta].valor
+    if(!data.pacientes[id].contas[idConta].pago)
+        data.pacientes[id].devendo-=data.pacientes[id].contas[idConta].valor
     data.pacientes[id].contas.splice(idConta,1)
     await saveData(data)
     window.location.reload() 
