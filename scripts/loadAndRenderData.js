@@ -46,6 +46,8 @@ function renderDetalhesPaciente() {
     const idPaciente = getId()
     const checkSVG = `<svg id="pardon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>`
     const xSVG = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M23 20.168l-8.185-8.187 8.185-8.174-2.832-2.807-8.182 8.179-8.176-8.179-2.81 2.81 8.186 8.196-8.186 8.184 2.81 2.81 8.203-8.192 8.18 8.192z"/></svg>`
+    const nomePacienteLabel = document.getElementById("paciente-nome")
+    nomePacienteLabel.innerHTML=pacientes[idPaciente].nome
     pacientes[idPaciente].contas.forEach(
         (conta,index)=>{
             listaContas.innerHTML +=

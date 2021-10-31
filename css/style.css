@@ -62,6 +62,7 @@
 body{
     padding: 40px 68px 22px;
     background-color: var(--background-primary);
+    overflow: hidden;
 }
 
 /* Parte que mostra os valores totais a serem recebidos */

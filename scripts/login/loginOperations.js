@@ -13,6 +13,7 @@ const register = async (credentials)=>{
     const data = await loadData()
     data.login = hashedCredentials;
     await saveData(data)
+    ipcRenderer.send("login-success-submission", credentials)
 }
 const getSavedCredentials = async ()=>{
     const data = await loadData()
