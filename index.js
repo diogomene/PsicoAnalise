@@ -6,6 +6,11 @@ const dialogRegister = require('./scripts/login/dialogRegister')
 const iconPath = path.join(__dirname, 'assets', "icon.png")
 let mw;
 const createLoginWindow = require('./createLoginWindow')
+const handleSquirrelEvent = require('./scripts/handleSquirrelEvent')
+if (handleSquirrelEvent(app)) {
+    // squirrel event handled and app will exit in 1000ms, so don't do anything else
+    return;
+}
 const createWindow = ()=>{
 
     mw = new BrowserWindow({

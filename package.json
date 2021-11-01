@@ -6,41 +6,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "electron .",
-    "pack": "npx electron-packager . PsicoAnalise --icon=assets/buildIcon.png"
+    "pack": "npx electron-packager . PsicoAnalise --icon=assets/buildIcon.png --out=temp",
+    "buildwin":"node ./temp/installerGen.js"
   },
   "author": "Diogo Menezes",
   "license": "ISC",
   "devDependencies": {
     "electron": "^15.0.0",
-    "electron-packager": "^15.4.0"
+    "electron-packager": "^15.4.0",
+    "electron-winstaller": "^5.0.0"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
     "fs": "^0.0.1-security"
-  },
-  "build": {
-    "appId": "com.diogomenezes.psicoanalise",
-    "mac": {
-      "category": "your.app.category.type"
-    },
-    "directories": {
-      "output": "dist"
-    },
-    "productName": "PsicoAnalise",
-    "target": "nsis",
-    "icon": "assets/buildicon.png",
-    "nsis": {
-      "allowToChangeInstallationDirectory": true,
-      "installerIcon": "assets/buildicon.png",
-      "runAfterFinish": true,
-      "createDesktopShortcut": true,
-      "shortcutName": "PsicoAnalise"
-    },
-    "extraFiles": [
-      {
-        "from": "assets/data",
-        "to": "data"
-      }
-    ]
   }
 }
