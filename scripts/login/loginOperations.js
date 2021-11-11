@@ -4,7 +4,6 @@ const {encryptCredentials, compareCredentials} = require('../bcrypter')
 const requestRegistration= async (credentials)=>{
     ipcRenderer.send("registration-request", credentials)
     ipcRenderer.on("dialog-register-response", (event, args)=>{
-        console.log(args)
         if(args.response==0) register(credentials) 
     })
 }
@@ -30,7 +29,7 @@ const checkRegistration = async ()=>{
 }
 const tryLogin = async (credentials)=>{
     const hashedCredentials = await getSavedCredentials()
-    console.log(await compareCredentials(credentials, hashedCredentials))
+
     if(await compareCredentials(credentials, hashedCredentials)){
         ipcRenderer.send("login-success-submission", credentials)
     }

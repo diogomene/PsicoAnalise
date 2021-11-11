@@ -69,9 +69,10 @@ async function renderData() {
     data = await loadData()
     pacientes = data.pacientes
     const listaPacientes = document.getElementById('lista-pacientes')
+    const listaContas = document.getElementById("lista-contas")
     if (listaPacientes) {
         renderPacientes(listaPacientes)
-    } else {
+    } else if(listaContas){
         renderDetalhesPaciente()
     }
 }

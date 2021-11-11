@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,11 +8,12 @@
     <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/jquery-weekdays.css">
     <title>Editar paciente</title>
 </head>
 <body id="body">
     <div class="cont-cadastro">
-        <form id="cadastro-paciente">
+        <form id="editar-paciente">
             <label for="nome">Nome do paciente</label>
             <input type="text" name="nome" id="nome" placeholder="Nome" required>
             <div>
@@ -38,8 +39,9 @@
                 </div>
 
 
-            <input class="bottom-button" type="submit" value="Cadastrar">
+            <input class="bottom-button" type="submit" value="Editar">
         </form>
     </div>
-    <script src="../scripts/login/loginEventsHandler.js"></script>
-</body> -->
+    <script src="../scripts/models/Paciente.js"></script>
+    <script src="../scripts/pacientes/pacientesEventsHandler.js"></script>
+</body>

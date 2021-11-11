@@ -1,6 +1,23 @@
 const {dialog} = require('electron')
 const dialogPaciente = async (event, args)=>{
     const userResponse = await dialog.showMessageBox(null,{
+        title:"Paciente",
+        message:"O que você deseja fazer?",
+        type:"question",
+        buttons:["Deletar paciente", "Editar paciente", "Cancelar"],
+        defaultId:2,
+        detail:"Escolha a operação desejada.",
+        cancelId:2,
+        defaultId:2
+    })
+    if(userResponse.response==0){
+        dialogDeletarPaciente(event,args)
+    }else{
+        event.reply("dialog-paciente-response", userResponse)
+    }
+}
+const dialogDeletarPaciente = async (event, args)=>{
+    const userResponse = await dialog.showMessageBox(null,{
         title:"Deletar paciente",
         message:"Você tem certeza que deseja deletar este paciente?",
         type:"question",
@@ -11,7 +28,10 @@ const dialogPaciente = async (event, args)=>{
         defaultId:1
         
     })
-    event.reply("dialog-paciente-response", userResponse)
+    if(userResponse.response==0){
+        event.reply("dialog-paciente-response", userResponse)
+        return
+    }
 }
 
 module.exports = dialogPaciente

@@ -2,6 +2,7 @@ const {contextBridge} = require('electron')
 const {renderData} = require('./loadAndRenderData');
 const {salvarDivida, toggleDivida, requisitExcluirDivida}= require('./dividas/dividaOperations')
 const {salvarPaciente, requisitDeletarPaciente} = require('./pacientes/pacienteOperations')
+const {getId} = require('./loadAndRenderData')
 window.addEventListener('DOMContentLoaded', () => {
     renderData()
 })
@@ -16,6 +17,7 @@ contextBridge.exposeInMainWorld('dividaOperations',
 contextBridge.exposeInMainWorld('pacienteOperations',
     {
         salvarPaciente:salvarPaciente,
-        requisitDeletarPaciente: requisitDeletarPaciente
+        requisitDeletarPaciente: requisitDeletarPaciente,
+        getId:getId
     }
 )

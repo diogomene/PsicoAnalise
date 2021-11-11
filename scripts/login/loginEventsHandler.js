@@ -26,7 +26,6 @@ window.addEventListener('DOMContentLoaded', () => {
             registerForm.addEventListener('submit', e=>{
                 e.preventDefault()
                 const credentials = getCredentials()
-                console.log(credentials)
                 if(credentials){
                     window.loginOperations.requestRegistration(credentials)
                 }else{

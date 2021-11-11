@@ -23,7 +23,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
     const toggleDividas = document.querySelectorAll('.pardon-cont')
-    console.log(toggleDividas)
     if (toggleDividas.length > 0) {
         toggleDividas.forEach(toggleDivida => {
             const idConta = toggleDivida.getAttribute('conta-id')

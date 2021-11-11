@@ -1,10 +1,17 @@
 const {ipcRenderer} = require('electron')
 const {loadData, saveData} = require('../data')
 
-const salvarPaciente= async (info)=>{
+const salvarPaciente= async (info, id)=>{
     const data = await loadData();
-    data.pacientes.push(info)
+    if(id){
+        data.pacientes[id].nome=info.nome
+        data.pacientes[id].secoes=info.secoes
+        data.pacientes[id].diasSecoes=info.diasSecoes
+    }else{
+        data.pacientes.push(info)
+    }
     await saveData(data)
+    return
 }
 const deletarPaciente = async (idPaciente)=>{
     const data = await loadData()
@@ -15,8 +22,11 @@ const deletarPaciente = async (idPaciente)=>{
 const requisitDeletarPaciente = async (idPaciente)=>{
     ipcRenderer.send("delete-paciente-request", null)
     ipcRenderer.on("dialog-paciente-response", (event, args)=>{
-        console.log(args)
-        if(args.response==0) deletarPaciente(idPaciente) 
+        if(args.response==0) deletarPaciente(idPaciente)
+        else
+            if(args.response==1){
+                window.location.href=`./editPaciente.html?id=${idPaciente}`
+            }
     })
 }
 

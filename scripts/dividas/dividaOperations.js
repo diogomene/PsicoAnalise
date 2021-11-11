@@ -27,7 +27,6 @@ const toggleDivida = async (idConta)=>{
 const requisitExcluirDivida = async (idConta)=>{
     ipcRenderer.send("delete-conta-request", null)
     ipcRenderer.on("dialog-divida-response", (event, args)=>{
-        console.log(args)
         if(args.response==0) deletarDivida(idConta) 
     })
 }
